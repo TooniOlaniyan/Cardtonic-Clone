@@ -3,6 +3,7 @@ import Button from '../shared/Button';
 import googleplay from '../assets/Svgs/googleplay.svg'
 import appstore from '../assets/Svgs/appstore.svg'
 import Trade from '../assets/jpgs/Trade.png' 
+import TradePhone from '../assets/jpgs/TradePhone.png' 
 import underMark from '../assets/Svgs/underMark.svg'
 
 function Download() {
@@ -15,7 +16,7 @@ function Download() {
               Download <br /> Cardtonic App
             </h1>
             <span className="downloadLine"></span>
-            <img className='downloadMark' src={underMark} alt="" />
+            <img className="downloadMark" src={underMark} alt="" />
 
             <div className="downloadSocialCard">
               <img src={googleplay} alt="" />
@@ -32,9 +33,25 @@ function Download() {
             <Button>Register Now</Button>
           </div>
         </div>
-        <div className="phoneImage">
-          <img width={332} height={274} src={Trade} alt="" />
-        </div>
+      
+          <picture className="phoneImage">
+            <source
+              className="tradeSmallImg"
+              width='300px'
+              height='300px'
+              media="(min-width:800px)"
+              srcSet={Trade}
+            />
+            <source
+              width='150px'
+              height='150px'
+              media="(max-width:600px)"
+              srcSet={TradePhone}
+            />
+            <img src={TradePhone} alt={"Partners"} />
+          </picture>
+          {/* <img width={332} height={274} src={Trade} alt="" /> */}
+        
       </div>
     </>
   );

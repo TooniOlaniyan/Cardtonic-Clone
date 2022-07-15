@@ -801,6 +801,15 @@ ul{
     width: max-content;
     line-height:45px;
   }
+  .downloadText p{
+    width: fit-content;
+  }
+  .phoneImage{
+    right: 0;
+  }
+  .tradeSmallImg{
+    width: 200px;
+  }
 }
 
 /* DOWNLOAD CARDTONIC APP */
