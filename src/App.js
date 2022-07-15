@@ -21,7 +21,7 @@ function App() {
       <About/>
       <NoCardWaste/>
       <Hero2/>
-      {/* <Download/> */}
+      <Download/>
       <InTheNews/>
       <Footer/>
       <InterCom/>
