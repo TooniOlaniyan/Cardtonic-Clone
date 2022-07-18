@@ -9,13 +9,14 @@ import NoCardWaste from './components/NoCardWaste';
 import {BrowserRouter as Router , Routes , Route} from 'react-router-dom'
 import Hero2 from './components/Hero2';
 import InterCom from './shared/InterCom';
+import Started from './components/GetStartedNow/Started';
+
 
 
 function App() {
   return (
     <div>
       <Router>
-        
       <Header/>
       <Hero/>
       <About/>
@@ -23,6 +24,7 @@ function App() {
       <Hero2/>
       <Download/>
       <InTheNews/>
+      <Started/>
       <Footer/>
       <InterCom/>
 
