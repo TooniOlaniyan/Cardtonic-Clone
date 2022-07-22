@@ -1,9 +1,25 @@
 import React, { useState } from 'react'
 import {RiArrowDownSLine} from 'react-icons/ri'
 
-import {motion , AnimatePresence} from 'framer-motion'
+import {motion , AnimatePresence, transform} from 'framer-motion'
 
-function MobileMenu() {
+function MobileMenu({isOpen , setIsOpen}) {
+    const menuVarient = {
+        initial:{
+            x: -200
+        },
+        final:{
+            x:-200,
+            X:50,
+            x:0
+        },
+        exit:{
+            x: 0,
+            x: 50,
+            x: -200
+        }
+        
+    }
    
     const [open , setOpen] = useState(false)
     const [openOne , setOpenOne] = useState(false)
@@ -26,12 +42,12 @@ function MobileMenu() {
     }
   return (
     <AnimatePresence>
-    <motion.div initial={{x:-200}} animate={{x:[-200,50,0]}} className='mobileMenuContainer'>
-        <a className='skill' href="">
+    {isOpen && <motion.div variants={menuVarient} initial= 'initial' animate= 'final' exit={{x:[0,-130,1000]}} className='mobileMenuContainer'>
+        <a key={1} className='skill' href="">
            Upskill
           
         </a>
-        <motion.div className='mobileDropdown'>
+        <motion.div key={2} className='mobileDropdown'>
             <div className="mobileFlex">
             <p>Customer</p>
             <RiArrowDownSLine onClick={handleCLickOne} className='menuIconMobile'/>
@@ -47,7 +63,7 @@ function MobileMenu() {
             </motion.div>}
             </AnimatePresence>
         </motion.div>
-        <div className='mobileDropdown'>
+        <div key={3} className='mobileDropdown'>
         <div className="mobileFlex">
             <p>Business</p>
             <RiArrowDownSLine onClick={handleCLickTwo} className='menuIconMobile'/>
@@ -63,7 +79,7 @@ function MobileMenu() {
         </div>
 
 
-        <div className='mobileDropdown'>
+        <div key={4} className='mobileDropdown'>
         <div className="mobileFlex">
             <p>Customer</p>
             <RiArrowDownSLine onClick={handleCLickThree} className='menuIconMobile'/>
@@ -78,7 +94,7 @@ function MobileMenu() {
             </motion.div>}
         </div>
 
-    </motion.div>
+    </motion.div>}
     </AnimatePresence>
   )
 }

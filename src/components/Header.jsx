@@ -35,10 +35,10 @@ function Header() {
     <div className="headerContainer">
       <nav>
         <Link to="/">
-        {isOpen && <MobileMenu />}
+       <MobileMenu isOpen={isOpen} />
           <img className="logoImage" src={cardtonicLogo} alt="" />
         </Link>
-        {isOpen ?   <motion.div variants={boxVarient} animate = 'open' className='bgContainer'></motion.div> : <motion.div variants={boxVarient} animate = 'close' className='bgContainer'></motion.div> }
+        <motion.div variants={boxVarient} animate = {isOpen ? 'open' : 'close'} className='bgContainer'></motion.div> 
         <Hamburger  toggled={isOpen} toggle={setIsOpen} easing='ease-in' size={20} direction='left'/>
 
 

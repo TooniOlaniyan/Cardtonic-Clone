@@ -46,6 +46,11 @@ body{
 .hamburgerMenu{
   display: none;
 
+
+}
+
+.bgContainer{
+  display: none;
 }
 @media screen and (max-width:700px){
   .interCom{
@@ -76,21 +81,23 @@ body{
     top: 0;
     left: 0;
     gap: 4rem;
-    transition: all .8s cubic-bezier(.68,-.55,.265,1.55);
+    transition: all 0.7s cubic-bezier(.68,-.55,.265,1.55);
     color: white;
+   
     
     
   }
   .bgContainer{
+    display: block;
     height: 30px;
     width: 30px;
     position: fixed;
-    top: 40px;
+    top: 30px;
     right: 60px;
     background: #002444;
     border-radius: 50%;
     z-index: 2;
-    transition:all .8s cubic-bezier(.86,0,.07,1);
+    transition:all 1s cubic-bezier(.86,0,.07,1);
   
    
   }
