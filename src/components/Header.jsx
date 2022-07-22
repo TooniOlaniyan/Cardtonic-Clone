@@ -6,25 +6,40 @@ import Button from '../shared/Button'
 import {HiOutlineMenu} from 'react-icons/hi'
 import { GrClose } from "react-icons/gr";
 import MenuListItems from './Menu/MenuListItems'
+import { Turn as Hamburger } from 'hamburger-react'
+import MobileMenu from './Menu/MobileMenu'
+import {motion , AnimatePresence} from 'framer-motion'
 
 
 function Header() {
-  const [isOpen , setIsOpen] = useState(true)
+  const [isOpen , setIsOpen] = useState(false)
+  if(isOpen){
+    document.body.classList.add('fixed-position')
+  }else{
+    document.body.classList.remove('fixed-position')
+  }
 
-  const open = 
-  <HiOutlineMenu onClick={()=>{setIsOpen(!isOpen)}} className='hamburgerMenu' size={50}/>
 
-  const close = (
-    <GrClose onClick={() => {setIsOpen(!isOpen);}} className="hamburgerMenu" size={45} />
-  );
+  const boxVarient = {
+    open: {
+      scale: 0,
+      scale: 100
+    },
+    close:{
+      scale:100,
+      scale:0
+    }
+  }
 
   return (
     <div className="headerContainer">
       <nav>
         <Link to="/">
+        {isOpen && <MobileMenu />}
           <img className="logoImage" src={cardtonicLogo} alt="" />
         </Link>
-        {isOpen ? open : close}
+        {isOpen ?   <motion.div variants={boxVarient} animate = 'open' className='bgContainer'></motion.div> : <motion.div variants={boxVarient} animate = 'close' className='bgContainer'></motion.div> }
+        <Hamburger  toggled={isOpen} toggle={setIsOpen} easing='ease-in' size={20} direction='left'/>
 
 
 

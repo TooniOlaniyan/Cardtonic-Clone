@@ -10,6 +10,9 @@
   font-family: 'Lato', sans-serif;
 
 }
+.fixed-position{
+  position: fixed;
+}
 
 
 /*................... header.................. */
@@ -23,6 +26,9 @@ nav{
 }
 body{
   position: relative;
+}
+.hamburger-react{
+  display: none;
 }
 .interCom{
   position: fixed;
@@ -46,6 +52,84 @@ body{
     bottom: 1rem;
     right: 1rem;
   }
+  .hamburger-react{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: #cffcff;
+    border-radius: 50%;
+    z-index: 5;
+    
+  }
+  .mobileMenuContainer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100vh;
+    padding: 0 5.5rem;
+    width: 100vw;
+    z-index: 4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    gap: 4rem;
+    transition: all .8s cubic-bezier(.68,-.55,.265,1.55);
+    color: white;
+    
+    
+  }
+  .bgContainer{
+    height: 30px;
+    width: 30px;
+    position: fixed;
+    top: 40px;
+    right: 60px;
+    background: #002444;
+    border-radius: 50%;
+    z-index: 2;
+    transition:all .8s cubic-bezier(.86,0,.07,1);
+  
+   
+  }
+  .skill{
+    font-size: 20px;
+  }
+  .mobileDropdown{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 20px;
+  }
+  .menuIconMobile{
+    cursor: pointer;
+    color: #fff;
+  }
+  .mobileListTest{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    font-weight: 300;
+    gap: 1rem;
+    margin-right: 1rem;
+    margin: 1.5rem;
+  }
+  .mobileListTest p{
+    font-size: 17px;
+    color:#cfcfcf;
+    
+  }
+  .mobileFlex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
 }
 a,
 a:hover,
