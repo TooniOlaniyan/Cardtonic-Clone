@@ -42,6 +42,7 @@ body{
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  z-index: 5;
 }
 .hamburgerMenu{
   display: none;
@@ -92,8 +93,8 @@ body{
     height: 30px;
     width: 30px;
     position: fixed;
-    top: 30px;
-    right: 60px;
+    top: 45px;
+    right: 40px;
     background: #002444;
     border-radius: 50%;
     z-index: 2;
@@ -173,13 +174,16 @@ ul{
     display: none;
   }
   .logoImage{
-    width: 9rem;
+    width: 12rem;
     text-align: left;
   }
   .headerContainer{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    gap: 10rem;
+    margin-top: 1rem;
+    
   }
   .hamburgerMenu{
     display: flex;
@@ -691,7 +695,6 @@ ul{
     font-size: 40px;
   }
   .noWastage{
-    /* border: 1px solid black; */
     width: 300px;
     margin-right: 2.4rem;
   }

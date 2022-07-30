@@ -39,6 +39,7 @@ function Slider() {
           spaceBetween={3}
           slidesPerView={1}
           pagination={true}
+          
         >
           <SwiperSlide className='swiper'>
             <SwipeContent
